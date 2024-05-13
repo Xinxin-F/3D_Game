@@ -9,9 +9,11 @@ public class HealthController : MonoBehaviour
     [SerializeField] private float currentHealth; 
     [SerializeField] private float healAmount; 
 
+    public WinLosePage winLosePage;
+
     void Start(){
         // currentHealth = FullHealth;
-         currentHealth = 50;
+        currentHealth = 50;
     }
 
     public float RemainingHealthPercentage{
@@ -27,6 +29,14 @@ public class HealthController : MonoBehaviour
         OnHealthChanged.Invoke();
 
         if(currentHealth <= 0f){
+            if (gameObject.CompareTag("Hero"))
+            {
+                winLosePage.ActivateLosePanel();
+            }
+            else if (gameObject.CompareTag("Boss"))
+            {
+                winLosePage.ActivateWinPanel();
+            }
             Destroy(gameObject);
            // LevelManager.manager.GameOver();
         }
