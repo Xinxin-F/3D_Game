@@ -23,6 +23,14 @@ public class AbilityHolder : MonoBehaviour
     public AbilityControl[] abilities;  // Array to hold any number of abilities
     private AbilityControl currentAbility;  // Currently selected ability
 
+    void Start()
+    {
+        if (abilities != null && abilities.Length > 0)
+        {
+            currentAbility = abilities[0];
+        }
+    }
+
     void Update()
     {
         // Switch abilities using numeric keys, checking if the index exists

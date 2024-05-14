@@ -1129,11 +1129,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilities:
-  - ability: {fileID: 11400000, guid: cda69836ee01340e09428f68515a9cef, type: 2}
+  - ability: {fileID: 11400000, guid: 78dfec9f7bb214e79ae20437b92fc928, type: 2}
     cooldownTime: 0
     activeTime: 0
     state: 0
-  - ability: {fileID: 11400000, guid: 78dfec9f7bb214e79ae20437b92fc928, type: 2}
+  - ability: {fileID: 11400000, guid: cda69836ee01340e09428f68515a9cef, type: 2}
     cooldownTime: 0
     activeTime: 0
     state: 0
