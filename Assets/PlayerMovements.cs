@@ -21,7 +21,7 @@ public class PlayerMovements : MonoBehaviour
     void Update()
     {
         // navMeshAgent.destination = movePositionTransform.position;
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(1)) {
                
             
                 RaycastHit hit;

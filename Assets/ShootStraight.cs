@@ -1,22 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootStraight : MonoBehaviour
+[CreateAssetMenu(menuName = "Abilities/Shoot Ability")]
+public class ShootStraight : Ability
 {
-    public Transform bulletSpawnPoint;
+    // public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
-    //private float ShootTimer;
 
-
-    // Update is called once per frame
-    void Update()
+    public override void Activate(GameObject parent)
     {
-        if(Input.GetMouseButtonDown(1)){
-             Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform. rotation);
-        }
-        // checkShoot();
+        Transform bulletSpawnPoint = parent.transform;
+        // Shoot();
+        Shoot(bulletSpawnPoint);
+        
     }
+
+    private void Shoot(Transform bulletSpawnPoint)
+    {
+        Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+    }
+}
+
+
+
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
+
+// public class ShootStraight : MonoBehaviour
+// {
+//     public Transform bulletSpawnPoint;
+//     public GameObject bulletPrefab;
+//     //private float ShootTimer;
+
+
+//     // Update is called once per frame
+//     void Update()
+//     {
+//         if(Input.GetMouseButtonDown(1)){
+//              Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform. rotation);
+//         }
+//         // checkShoot();
+//     }
 
     // // check whether range attack is triggered
     // private void checkShoot(){
@@ -32,4 +56,4 @@ public class ShootStraight : MonoBehaviour
     // public void shoot(){
     //      Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
     // }
-}
+//}
