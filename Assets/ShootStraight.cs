@@ -9,16 +9,83 @@ public class ShootStraight : Ability
     public override void Activate(GameObject parent)
     {
         Transform bulletSpawnPoint = parent.transform;
-        // Shoot();
-        Shoot(bulletSpawnPoint);
-        
+        Vector3 shootDirection = GetShootDirection(parent, bulletSpawnPoint);
+        Shoot(bulletSpawnPoint, shootDirection);
     }
 
-    private void Shoot(Transform bulletSpawnPoint)
+    private Vector3 GetShootDirection(GameObject shooter, Transform bulletSpawnPoint)
     {
-        Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        if (shooter.CompareTag("Player"))
+        {
+            // Player shooting towards mouse click
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                Vector3 targetPoint = hit.point;
+                Vector3 direction = (targetPoint - bulletSpawnPoint.position).normalized;
+                Debug.DrawLine(ray.origin, hit.point, Color.red, 2f);
+
+                return direction;
+                // RotateTowards(hit.point);
+            }
+            return bulletSpawnPoint.forward; // Default to forward direction if no hit
+        }
+        // else if (shooter.CompareTag("Boss"))
+        // {
+        //     // Boss shooting towards the player
+        //     GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //     if (player != null)
+        //     {
+        //         Vector3 targetPoint = player.transform.position;
+        //         Vector3 direction = (targetPoint - bulletSpawnPoint.position).normalized;
+        //         return direction;
+        //     }
+        //     return bulletSpawnPoint.forward; // Default to forward direction if no player found
+        // }
+        
+        return bulletSpawnPoint.forward; // Default to forward direction if shooter tag is not recognized
     }
+
+    private void Shoot(Transform bulletSpawnPoint, Vector3 direction)
+    {
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.LookRotation(direction));
+        Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+        if (bulletRb != null)
+        {
+            bulletRb.velocity = direction * 10f; // Set bullet speed, adjust as needed
+        }
+    }
+
+    // private void RotateTowards(Vector3 targetPoint)
+    // {
+    //     Vector3 targetPoint = hit.point;
+    //     Vector3 direction = (targetPoint - bulletSpawnPoint.position).normalized;
+    // }
 }
+
+
+
+
+
+
+//// just shoot straight
+    // public override void Activate(GameObject parent)
+    // {
+    //     Transform bulletSpawnPoint = parent.transform;
+    //     // Shoot();
+    //     Shoot(bulletSpawnPoint);
+        
+    // }
+
+    // private void Shoot(Transform bulletSpawnPoint)
+    // {
+    //     Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+    // }
+
+
+
 
 
 
