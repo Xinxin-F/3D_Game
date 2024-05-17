@@ -20,6 +20,7 @@ public class PlayerMovements : MonoBehaviour
 
     void Update()
     {
+        //rotateWithMouse();
         if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
@@ -58,7 +59,24 @@ public class PlayerMovements : MonoBehaviour
 //         direction.y = 0; // Keep only the horizontal direction
 //         transform.rotation = Quaternion.LookRotation(direction);
 //     }
+
 // }
+
+
+    public void rotateWithMouse(){
+        Vector3 mouseScreenPosition = Input.mousePosition;
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Camera.main.transform.position.z));
+
+        Vector3 direction = mouseWorldPosition - transform.position;
+        // Ensure the direction is in the X-Z plane
+        direction.y = 0;
+
+        // Calculate the angle between the forward vector and the target direction
+        float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
+
+        // Apply the rotation to the player
+        transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
+    }
 
 }
 // public class PlayerMovements : MonoBehaviour

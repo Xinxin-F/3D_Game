@@ -17,9 +17,14 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, lifetime); 
     }
 
-    private void FixedUpdate()
+    // private void FixedUpdate()
+    // {
+    //     rb.AddForce(rb.transform.forward * speed); //fly straight away
+    // }
+
+    public void SetDirection(Vector3 direction)
     {
-        rb.AddForce(rb.transform.forward * speed); //fly straight away
+        rb.velocity = direction * speed;
     }
 
     private void OnTriggerEnter(Collider other){

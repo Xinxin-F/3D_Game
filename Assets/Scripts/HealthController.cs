@@ -12,8 +12,8 @@ public class HealthController : MonoBehaviour
     public WinLosePage winLosePage;
 
     void Start(){
-        // currentHealth = FullHealth;
-        currentHealth = 50;
+        currentHealth = FullHealth;
+        //currentHealth = 50;
     }
 
     public float RemainingHealthPercentage{
