@@ -1,17 +1,15 @@
-// using System.Collections;
-// using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class PlayerMovements : MonoBehaviour
 {
-    public GameObject movementIndicatorPrefab; // Reference to the movement indicator prefab
+    public GameObject movementIndicatorPrefab;
 
     private NavMeshAgent navMeshAgent;
 
     [SerializeField] private LayerMask layerMask;
 
-    private GameObject currentIndicator; // Reference to the current movement indicator object
+    private GameObject currentIndicator; 
 
     void Awake()
     {
@@ -28,13 +26,10 @@ public class PlayerMovements : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
             {
-                // Destroy previous indicator if it exists
                 if (currentIndicator != null)
                 {
                     Destroy(currentIndicator);
                 }
-
-                // Instantiate the movement indicator prefab at the hit point
                 currentIndicator = Instantiate(movementIndicatorPrefab, hit.point, Quaternion.identity);
 
                 navMeshAgent.destination = hit.point;
@@ -44,9 +39,8 @@ public class PlayerMovements : MonoBehaviour
         // Check if the hero has reached the destination
         if (currentIndicator != null && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance && !navMeshAgent.pathPending)
         {
-            // Destroy the current movement indicator
             Destroy(currentIndicator);
-            currentIndicator = null; // Reset the indicator reference
+            currentIndicator = null;
         }
     }
 }

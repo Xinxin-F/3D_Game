@@ -11,20 +11,21 @@ public class AreaAttack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             PerformAttack();
-            //particleSystem.Play();
         }
     }
 
     void PerformAttack()
     {
-        // attackParticleSystem.Play();
-        // Invoke("StopParticleSystem", 5f);
 
         if (attackParticleSystem != null)
         {
-            Debug.Log("Playing particle system");
-            attackParticleSystem.Play();
-            Invoke("StopParticleSystem", 5f);
+            //Debug.Log("Preparing to play particle system");
+            // Instantiate(attackParticleSystem, transform.position, transform.rotation);
+
+            ParticleSystem instance = Instantiate(attackParticleSystem, transform.position, transform.rotation);
+            instance.Play();
+            Destroy(instance.gameObject, instance.main.duration);
+
         }
         else
         {
@@ -42,16 +43,17 @@ public class AreaAttack : MonoBehaviour
         }
     }
 
-    void StopParticleSystem()
-    {
-        attackParticleSystem.Stop();
-        Debug.Log("Stopping particle system");
-    }
+    // void StopParticleSystem()
+    // {
+    //     //attackParticleSystem.Stop();
+    //     attackParticleSystem.Clear();
+    //     Debug.Log("Stopping particle system");
+    // }
 
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRadius);
-    }
+    // void OnDrawGizmosSelected()
+    // {
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawWireSphere(transform.position, attackRadius);
+    // }
 }
