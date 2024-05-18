@@ -37,9 +37,6 @@ public class PlayerMovements : MonoBehaviour
                 // Instantiate the movement indicator prefab at the hit point
                 currentIndicator = Instantiate(movementIndicatorPrefab, hit.point, Quaternion.identity);
 
-                //RotateTowards(hit.point);
-                
-                // Move the hero to the hit point
                 navMeshAgent.destination = hit.point;
             }
         }
@@ -52,7 +49,7 @@ public class PlayerMovements : MonoBehaviour
             currentIndicator = null; // Reset the indicator reference
         }
     }
-
+}
 //     private void RotateTowards(Vector3 targetPoint)
 //     {
 //         Vector3 direction = (targetPoint - transform.position).normalized;
@@ -63,22 +60,22 @@ public class PlayerMovements : MonoBehaviour
 // }
 
 
-    public void rotateWithMouse(){
-        Vector3 mouseScreenPosition = Input.mousePosition;
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Camera.main.transform.position.z));
+    // public void rotateWithMouse(){
+    //     Vector3 mouseScreenPosition = Input.mousePosition;
+    //     Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Camera.main.transform.position.z));
 
-        Vector3 direction = mouseWorldPosition - transform.position;
-        // Ensure the direction is in the X-Z plane
-        direction.y = 0;
+    //     Vector3 direction = mouseWorldPosition - transform.position;
+    //     // Ensure the direction is in the X-Z plane
+    //     direction.y = 0;
 
-        // Calculate the angle between the forward vector and the target direction
-        float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
+    //     // Calculate the angle between the forward vector and the target direction
+    //     float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
 
-        // Apply the rotation to the player
-        transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
-    }
+    //     // Apply the rotation to the player
+    //     transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
+    // }
 
-}
+//}
 // public class PlayerMovements : MonoBehaviour
 // {
 //     public GameObject movementIndicatorPrefab; 

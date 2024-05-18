@@ -12,7 +12,19 @@ public class ShootProjectiles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var _projectiles = Instantiate(grenade, launchPoint.position, launchPoint.rotation);
+         if (Input.GetKeyDown(KeyCode.G))
+        {
+            shootParabola();
+        }
+
+        // var _projectiles = Instantiate(grenade, launchPoint.position, launchPoint.rotation);
+        // _projectiles.GetComponent<Rigidbody>().velocity = launchPoint.up*launchVelocity;
+    }
+
+    void shootParabola(){
+        Vector3 direction = AttackDirection.GetDirectionFromMouse(Camera.main, gameObject);
+        Vector3 spawnPosition = launchPoint.position;
+        var _projectiles = Instantiate(grenade, spawnPosition, launchPoint.rotation);
         _projectiles.GetComponent<Rigidbody>().velocity = launchPoint.up*launchVelocity;
     }
 }

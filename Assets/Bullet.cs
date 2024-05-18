@@ -33,9 +33,14 @@ public class Bullet : MonoBehaviour
             other.GetComponent<HealthController>().TakeDamage(BulletDamage);
             Destroy(gameObject);
         }
-        else{
+        // else{
             Destroy(gameObject);
-        }
+        // }
+    }
+
+    void OnCollisionEnter(Collision collision) 
+    {
+        Destroy(gameObject);
     }
 
 

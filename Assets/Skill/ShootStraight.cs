@@ -10,10 +10,11 @@ public class ShootStraight : Ability
     Vector3 direction = AttackDirection.GetDirectionFromMouse(Camera.main, parent);
         if (direction != Vector3.zero)
         {
-            // Use the parent's position as the spawn point
             Transform parentTransform = parent.transform;
 
-            GameObject bullet = Instantiate(bulletPrefab, parentTransform.position, parentTransform.rotation);
+            Vector3 spawnPosition = parentTransform.position + direction;
+
+            GameObject bullet = Instantiate(bulletPrefab, spawnPosition, parentTransform.rotation);
 
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             if (rb != null)
@@ -21,6 +22,9 @@ public class ShootStraight : Ability
                 rb.velocity = direction * bulletSpeed;
             }
         }
+    }
+
+}
 
     // public override void Activate(GameObject parent)
     // {
@@ -34,9 +38,7 @@ public class ShootStraight : Ability
     //     //     rb.velocity = direction * bulletSpeed;
     //     // }
     // }
-}
 
-}
 
 
 //// cannot shoot at target location
