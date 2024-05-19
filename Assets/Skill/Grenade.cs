@@ -26,7 +26,7 @@ public class Grenade : MonoBehaviour
     void Exploded(){
 
         //show visual effect
-        //  Instantiate(ExplosionEffect, transform.position, transform.rotation);
+        // Instantiate(ExplosionEffect, transform.position, transform.rotation);
 
         GameObject explosionInstance = Instantiate(ExplosionEffect, transform.position, transform.rotation);
         ParticleSystem ps = explosionInstance.GetComponent<ParticleSystem>();
@@ -45,23 +45,17 @@ public class Grenade : MonoBehaviour
         //get nearby objects
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
+        //damage
         foreach (Collider nearbyObject in colliders){
             if (nearbyObject.gameObject.CompareTag("Boss"))
             {
                 nearbyObject.GetComponent<HealthController>().TakeDamage(grenadeDamage);
             }
         }
-        //damage
 
         Destroy(gameObject);
 
-
-        
     }
-
-
-
-
 
 }
 

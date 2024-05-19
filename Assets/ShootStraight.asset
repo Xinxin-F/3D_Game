@@ -15,4 +15,5 @@ MonoBehaviour:
   name: Shoot
   cooldownTime: 0.2
   activeTime: 0
-  bulletPrefab: {fileID: 2693919402196112940, guid: 30c909ec750884a628c9c851600c0a41, type: 3}
+  bulletPrefab: {fileID: 2693919402196112940, guid: 03d2325c94229444fb53fa971c889678, type: 3}
+  bulletSpeed: 10

@@ -1268,7 +1268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launchPoint: {fileID: 1612521764}
-  grenade: {fileID: 2693919402196112940, guid: 8e250eb0edae444778108c9745b38bcd, type: 3}
+  grenade: {fileID: 2693919402196112940, guid: 6ffef5003d5f34054adf80552fe0a34c, type: 3}
   launchVelocity: 10
 --- !u!1 &833110011
 GameObject:
@@ -7249,6 +7249,7 @@ GameObject:
   - component: {fileID: 1297350155}
   - component: {fileID: 1297350156}
   - component: {fileID: 1297350157}
+  - component: {fileID: 1297350158}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -7397,6 +7398,21 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &1297350158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297350150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff817330c29d14c90af4091b818afbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialMaterial: {fileID: 2100000, guid: c7824d63e66cd4f0c89f79c7a74bbae3, type: 2}
+  fireMaterial: {fileID: 2100000, guid: 28bbb5bb5a8cf46e292627931df2a157, type: 2}
+  waterMaterial: {fileID: 2100000, guid: e8a7db8bb30ba7846922a11cebbe1a2f, type: 2}
 --- !u!1 &1317690953
 GameObject:
   m_ObjectHideFlags: 0
@@ -7513,7 +7529,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 963194227}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 50
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
