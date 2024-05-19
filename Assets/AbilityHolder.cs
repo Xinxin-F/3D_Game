@@ -25,6 +25,7 @@ public class AbilityHolder : MonoBehaviour
 
     void Start()
     {
+        LoadSelectedSkills();
         if (abilities != null && abilities.Length > 0)
         {
             currentAbility = abilities[0];
@@ -82,6 +83,18 @@ public class AbilityHolder : MonoBehaviour
         abilityControl.ability.Activate(gameObject);
         abilityControl.activeTime = abilityControl.ability.activeTime;
         abilityControl.state = AbilityControl.AbilityState.active;
+    }
+
+    private void LoadSelectedSkills() {
+        int selectedSkillsCount = PlayerPrefs.GetInt("SelectedSkillsCount", 0);
+        abilities = new AbilityControl[selectedSkillsCount];
+        for (int i = 0; i < selectedSkillsCount; i++) {
+            string skillName = PlayerPrefs.GetString("SelectedSkill" + i);
+            Ability ability = Resources.Load<Ability>("Abilities/" + skillName);
+            if (ability != null) {
+                abilities[i] = new AbilityControl { ability = ability };
+            }
+        }
     }
 }
 

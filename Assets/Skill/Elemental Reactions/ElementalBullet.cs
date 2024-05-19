@@ -5,17 +5,6 @@ using UnityEngine;
 public class ElementalBullet : MonoBehaviour
 {
     [SerializeField] private BulletType bulletType;
-
-    // void OnCollisionEnter(Collision collision)
-    // {
-    //     // Check if the collided object is the boss
-        
-    //     BossElement boss = collision.gameObject.GetComponent<BossElement>();
-    //     if (boss != null)
-    //     {
-    //         boss.OnHit(bulletType);
-    //         Destroy(gameObject);
-    //     }
     // }
 
     private void OnTriggerEnter(Collider other){
@@ -34,3 +23,13 @@ public class ElementalBullet : MonoBehaviour
     }
 }
 
+    // void OnCollisionEnter(Collision collision)
+    // {
+    //     // Check if the collided object is the boss
+        
+    //     BossElement boss = collision.gameObject.GetComponent<BossElement>();
+    //     if (boss != null)
+    //     {
+    //         boss.OnHit(bulletType);
+    //         Destroy(gameObject);
+    //     }

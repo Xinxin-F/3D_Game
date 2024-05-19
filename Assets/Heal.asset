@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 487720fa65e7841eca2e054458855963, type: 3}
+  m_Script: {fileID: 11500000, guid: b132d766b716c4183a1548832f7e61ca, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: 
   name: Heal
-  cooldownTime: 3
+  cooldownTime: 0
   activeTime: 0
   healAmount: 10

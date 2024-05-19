@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c7b3b3fa856f4f119df9e3da2c04107, type: 3}
+  m_Script: {fileID: 11500000, guid: 086ff48dd897d4171b0ed52c659bf3d2, type: 3}
   m_Name: ShootStraight
   m_EditorClassIdentifier: 
-  name: Shoot
-  cooldownTime: 0.2
+  name: Shoot Straight
+  cooldownTime: 0
   activeTime: 0
-  bulletPrefab: {fileID: 2693919402196112940, guid: 03d2325c94229444fb53fa971c889678, type: 3}
+  bulletPrefab: {fileID: 2693919402196112940, guid: 30c909ec750884a628c9c851600c0a41, type: 3}
   bulletSpeed: 10
