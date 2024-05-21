@@ -140,6 +140,17 @@ public class AbilityHolder : MonoBehaviour
             }
         }
     }
+
+
+    public void SetCurrentAbility(int index)
+    {
+        if (index >= 0 && index < abilities.Length)
+        {
+            currentAbility = abilities[index];
+        }
+    }
+
+
 }
 
 

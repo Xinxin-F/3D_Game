@@ -30,7 +30,7 @@ public class ElementalReactionSkill : Ability
         if (direction != Vector3.zero)
         {
             Transform parentTransform = parent.transform;
-            Vector3 spawnPosition = parentTransform.position + direction;
+            Vector3 spawnPosition = parentTransform.position + 2*direction;
             GameObject bullet = Instantiate(bulletPrefab, spawnPosition, parentTransform.rotation);
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             if (rb != null)

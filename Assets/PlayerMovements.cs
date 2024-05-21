@@ -30,8 +30,8 @@ public class PlayerMovements : MonoBehaviour
                 {
                     Destroy(currentIndicator);
                 }
-                currentIndicator = Instantiate(movementIndicatorPrefab, hit.point, Quaternion.identity);
-
+                //currentIndicator = Instantiate(movementIndicatorPrefab, hit.point, Quaternion.identity);
+                currentIndicator = Instantiate(movementIndicatorPrefab, hit.point, Quaternion.Euler(90, 0, 0));
                 navMeshAgent.destination = hit.point;
             }
         }
