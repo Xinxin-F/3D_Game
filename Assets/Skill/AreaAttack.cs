@@ -1,3 +1,42 @@
+// using UnityEngine;
+
+// [CreateAssetMenu(menuName = "Abilities/Area Attack")]
+// public class AreaAttack : Ability
+// {
+//     public float attackRadius = 50f;
+//     public float areaDamage = 5f;
+//     public ParticleSystem attackParticleSystem;
+
+//     public override void Activate(GameObject parent)
+//     {
+//         if (attackParticleSystem != null)
+//         {
+//             ParticleSystem instance = Instantiate(attackParticleSystem, parent.transform.position, parent.transform.rotation);
+//             instance.Play();
+//             Destroy(instance.gameObject, instance.main.duration);
+//         }
+//         else
+//         {
+//             Debug.LogWarning("Particle system not assigned");
+//         }
+
+//         Collider[] hitColliders = Physics.OverlapSphere(parent.transform.position, attackRadius);
+//         foreach (Collider hitCollider in hitColliders)
+//         {
+//             if (hitCollider.CompareTag("Boss"))
+//             {
+//                 hitCollider.GetComponent<HealthController>().TakeDamage(areaDamage);
+//             }
+//         }
+//     }
+// }
+
+
+
+
+
+
+ ///// code solely for attack, no integration
 using UnityEngine;
 
 public class AreaAttack : MonoBehaviour
@@ -6,15 +45,15 @@ public class AreaAttack : MonoBehaviour
     [SerializeField] private float areaDamage = 5f;
     [SerializeField] private ParticleSystem attackParticleSystem;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            PerformAttack();
-        }
-    }
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.A))
+    //     {
+    //         PerformAttack();
+    //     }
+    // }
 
-    void PerformAttack()
+    public void PerformAttack()
     {
 
         if (attackParticleSystem != null)
@@ -42,18 +81,6 @@ public class AreaAttack : MonoBehaviour
             }
         }
     }
-
-    // void StopParticleSystem()
-    // {
-    //     //attackParticleSystem.Stop();
-    //     attackParticleSystem.Clear();
-    //     Debug.Log("Stopping particle system");
-    // }
-
-
-    // void OnDrawGizmosSelected()
-    // {
-    //     Gizmos.color = Color.red;
-    //     Gizmos.DrawWireSphere(transform.position, attackRadius);
-    // }
 }
+
+

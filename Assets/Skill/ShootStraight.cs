@@ -20,7 +20,6 @@ public class ShootStraight : Ability
             }
         }
     }
-
 }
 
     // public override void Activate(GameObject parent)

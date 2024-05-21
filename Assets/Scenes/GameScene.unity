@@ -1270,6 +1270,10 @@ MonoBehaviour:
     cooldownTime: 2
     activeTime: 0
     state: 0
+  - ability: {fileID: 11400000, guid: b21359d151c994705b8cb9d6995ccad1, type: 2}
+    cooldownTime: 2
+    activeTime: 0
+    state: 0
 --- !u!1 &833110011
 GameObject:
   m_ObjectHideFlags: 0
@@ -7925,67 +7929,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540469609}
   m_CullTransparentMesh: 1
---- !u!1 &1551207345
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1551207348}
-  - component: {fileID: 1551207347}
-  - component: {fileID: 1551207346}
-  m_Layer: 0
-  m_Name: AreaAttack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!135 &1551207346
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551207345}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1551207347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551207345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a7592f53ccaa455bb6144e942c50bad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRadius: 6
-  areaDamage: 5
-  attackParticleSystem: {fileID: 7480847937473002017, guid: 7815299dc43714b3c80e2aed9426a460, type: 3}
---- !u!4 &1551207348
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551207345}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1612521763
 GameObject:
   m_ObjectHideFlags: 0
