@@ -34,21 +34,33 @@ public class AbilityHolder : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Current Ability: " + currentAbility?.ability.name);
+        SwitchAbilities();
+        ActivateSelectedAbility();
+        UpdateAbilities();
+    }
 
-        // Switch abilities using numeric keys, checking if the index exists
-        if (Input.GetKeyDown(KeyCode.Alpha1) && abilities.Length > 0) currentAbility = abilities[0];
-        if (Input.GetKeyDown(KeyCode.Alpha2) && abilities.Length > 1) currentAbility = abilities[1];
-        if (Input.GetKeyDown(KeyCode.Alpha3) && abilities.Length > 2) currentAbility = abilities[2];
-        if (Input.GetKeyDown(KeyCode.Alpha4) && abilities.Length > 3) currentAbility = abilities[3];
+    private void SwitchAbilities()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1) && abilities.Length > 0)
+            currentAbility = abilities[0];
+        if (Input.GetKeyDown(KeyCode.Alpha2) && abilities.Length > 1)
+            currentAbility = abilities[1];
+        if (Input.GetKeyDown(KeyCode.Alpha3) && abilities.Length > 2)
+            currentAbility = abilities[2];
+        if (Input.GetKeyDown(KeyCode.Alpha4) && abilities.Length > 3)
+            currentAbility = abilities[3];
+    }
 
-        // Activate the selected ability with left mouse click
+    private void ActivateSelectedAbility()
+    {
         if (Input.GetMouseButtonDown(0) && currentAbility != null && currentAbility.state == AbilityControl.AbilityState.ready)
         {
             ActivateAbility(currentAbility);
         }
+    }
 
-        // Update all abilities' states and cooldowns
+    private void UpdateAbilities()
+    {
         foreach (var ability in abilities)
         {
             switch (ability.state)
@@ -64,7 +76,7 @@ public class AbilityHolder : MonoBehaviour
                         ability.cooldownTime = ability.ability.cooldownTime;
                     }
                     break;
-                
+
                 case AbilityControl.AbilityState.cooldown:
                     if (ability.cooldownTime > 0)
                     {
@@ -101,6 +113,60 @@ public class AbilityHolder : MonoBehaviour
         }
     }
 }
+
+
+
+
+
+
+    // void Update()
+    // {
+    //     Debug.Log("Current Ability: " + currentAbility?.ability.name);
+
+    //     // Switch abilities using numeric keys, checking if the index exists
+    //     if (Input.GetKeyDown(KeyCode.Alpha1) && abilities.Length > 0) currentAbility = abilities[0];
+    //     if (Input.GetKeyDown(KeyCode.Alpha2) && abilities.Length > 1) currentAbility = abilities[1];
+    //     if (Input.GetKeyDown(KeyCode.Alpha3) && abilities.Length > 2) currentAbility = abilities[2];
+    //     if (Input.GetKeyDown(KeyCode.Alpha4) && abilities.Length > 3) currentAbility = abilities[3];
+
+    //     // Activate the selected ability with left mouse click
+    //     if (Input.GetMouseButtonDown(0) && currentAbility != null && currentAbility.state == AbilityControl.AbilityState.ready)
+    //     {
+    //         ActivateAbility(currentAbility);
+    //     }
+
+    //     // Update all abilities' states and cooldowns
+    //     foreach (var ability in abilities)
+    //     {
+    //         switch (ability.state)
+    //         {
+    //             case AbilityControl.AbilityState.active:
+    //                 if (ability.activeTime > 0)
+    //                 {
+    //                     ability.activeTime -= Time.deltaTime;
+    //                 }
+    //                 else
+    //                 {
+    //                     ability.state = AbilityControl.AbilityState.cooldown;
+    //                     ability.cooldownTime = ability.ability.cooldownTime;
+    //                 }
+    //                 break;
+                
+    //             case AbilityControl.AbilityState.cooldown:
+    //                 if (ability.cooldownTime > 0)
+    //                 {
+    //                     ability.cooldownTime -= Time.deltaTime;
+    //                 }
+    //                 else
+    //                 {
+    //                     ability.state = AbilityControl.AbilityState.ready;
+    //                 }
+    //                 break;
+    //         }
+    //     }
+    // }
+
+
 
 
 
