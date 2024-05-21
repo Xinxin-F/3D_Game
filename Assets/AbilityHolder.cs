@@ -34,6 +34,8 @@ public class AbilityHolder : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Current Ability: " + currentAbility?.ability.name);
+
         // Switch abilities using numeric keys, checking if the index exists
         if (Input.GetKeyDown(KeyCode.Alpha1) && abilities.Length > 0) currentAbility = abilities[0];
         if (Input.GetKeyDown(KeyCode.Alpha2) && abilities.Length > 1) currentAbility = abilities[1];
@@ -93,6 +95,8 @@ public class AbilityHolder : MonoBehaviour
             Ability ability = Resources.Load<Ability>("Abilities/" + skillName);
             if (ability != null) {
                 abilities[i] = new AbilityControl { ability = ability };
+
+                Debug.Log("Loaded skill: " + ability.name);
             }
         }
     }
@@ -183,18 +187,3 @@ public class AbilityHolder : MonoBehaviour
 //     }
 
 
-
-
-
-//     // Start is called before the first frame update
-//     void Start()
-//     {
-        
-//     }
-
-//     // Update is called once per frame
-//     void Update()
-//     {
-        
-//     }
-// }
