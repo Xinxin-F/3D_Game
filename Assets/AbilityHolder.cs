@@ -35,7 +35,8 @@ public class AbilityHolder : MonoBehaviour
     void Update()
     {
         SwitchAbilities();
-        ActivateSelectedAbility();
+        //ActivateSelectedAbility();
+        HandleAbilityActivation();
         UpdateAbilities();
     }
 
@@ -51,13 +52,40 @@ public class AbilityHolder : MonoBehaviour
             currentAbility = abilities[3];
     }
 
-    private void ActivateSelectedAbility()
+    private float pressTime = 0f;
+    private float longPressThreshold = 0.5f;
+
+    private void HandleAbilityActivation()
     {
-        if (Input.GetMouseButtonDown(0) && currentAbility != null && currentAbility.state == AbilityControl.AbilityState.ready)
+        if (Input.GetMouseButtonDown(0))
         {
-            ActivateAbility(currentAbility);
+            pressTime = Time.time;
+        }
+        
+        if (Input.GetMouseButtonUp(0) && currentAbility != null && currentAbility.state == AbilityControl.AbilityState.ready)
+        {
+            float pressDuration = Time.time - pressTime;
+            bool isLongPress = pressDuration >= longPressThreshold;
+
+            //short press for fire, long press for ice
+            if (currentAbility.ability is ElementalReactionSkill)
+            {
+                ((ElementalReactionSkill)currentAbility.ability).Activate(gameObject, isLongPress);
+            }
+            else
+            {
+                ActivateAbility(currentAbility);
+            }
         }
     }
+
+    // private void ActivateSelectedAbility()
+    // {
+    //     if (Input.GetMouseButtonDown(0) && currentAbility != null && currentAbility.state == AbilityControl.AbilityState.ready)
+    //     {
+    //         ActivateAbility(currentAbility);
+    //     }
+    // }
 
     private void UpdateAbilities()
     {

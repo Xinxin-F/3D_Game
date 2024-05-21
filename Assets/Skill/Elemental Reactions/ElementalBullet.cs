@@ -5,7 +5,7 @@ using UnityEngine;
 public class ElementalBullet : MonoBehaviour
 {
     [SerializeField] private BulletType bulletType;
-    // }
+    
 
     private void OnTriggerEnter(Collider other){
 
