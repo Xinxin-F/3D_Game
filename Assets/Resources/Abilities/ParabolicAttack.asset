@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b827b8d423ab74cdda352ad4d9825926, type: 3}
+  m_Name: ParabolicAttack
+  m_EditorClassIdentifier: 
+  name: ParabolicAttack
+  cooldownTime: 2
+  activeTime: 0
+  projectilePrefab: {fileID: 2693919402196112940, guid: 330b21a737e2e47b7b34fcb6cc098725, type: 3}
+  launchVelocity: 10

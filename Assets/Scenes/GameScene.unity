@@ -1247,7 +1247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launchPoint: {fileID: 1612521764}
-  grenade: {fileID: 2693919402196112940, guid: 6ffef5003d5f34054adf80552fe0a34c, type: 3}
   launchVelocity: 10
 --- !u!114 &825512952
 MonoBehaviour:
