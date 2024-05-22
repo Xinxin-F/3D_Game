@@ -112,5 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
-  timeToRespawn: 0
+  timeToRespawn: 3
   objectToRespawn: {fileID: 7368215739172241317}
+  maxCoin: 3
+  spawnedCoin: 1
