@@ -29,7 +29,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuPage : MonoBehaviour
 {
-    public AudioSource audioSource;  // Attach the AudioSource component in the inspector
+    public AudioSource audioSource;
 
     public void ChangeScene(string name)
     {
@@ -38,14 +38,14 @@ public class MainMenuPage : MonoBehaviour
 
     public IEnumerator ChangeSceneAfterSound(string sceneName)
     {
-        audioSource.Play();  // Play the sound effect
-        yield return new WaitForSeconds(audioSource.clip.length - 1.2f);  // Wait for the sound to finish playing
-        Time.timeScale = 1f;  // Reset the timescale, if needed
-        SceneManager.LoadScene(sceneName);  // Load the next scene
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length - 1.2f); 
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(sceneName);
     }
 
     public void QuitGame()
     {
-        Application.Quit();  // Quit the game
+        Application.Quit();
     }
 }

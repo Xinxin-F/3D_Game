@@ -57,7 +57,7 @@ public class AbilityHolder : MonoBehaviour
 
     private void HandleAbilityActivation()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
         {
             pressTime = Time.time;
         }

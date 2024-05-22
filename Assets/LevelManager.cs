@@ -41,6 +41,11 @@ public class LevelManager : MonoBehaviour
 
     private void LoadCoinData()
     {
+
+        // add coins when game end
+
+
+
         if (File.Exists(filePath))
         {
             string json = File.ReadAllText(filePath);
@@ -52,6 +57,13 @@ public class LevelManager : MonoBehaviour
             coinCount = 0;
         }
     }
+
+    // public IEnumerator ChangeSceneAfterSound(string sceneName)
+    // {
+    //     audioSource.Play(); 
+    //     yield return new WaitForSeconds(audioSource.clip.length - 1.2f);  
+    //     SceneManager.LoadScene(sceneName);
+    // }
 
 }
 
