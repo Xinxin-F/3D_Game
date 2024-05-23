@@ -4,27 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
-
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager manager;
-    public int coinCount;
+    public int totalCoinCount;
+    private int sessionCoinCount; 
     private string filePath;
 
     private void Awake()
     {
         manager = this;
         filePath = Path.Combine(Application.persistentDataPath, "coinData.json");
-        //Debug.Log("Coin data file path: " + filePath); // Log the file path for debugging
         LoadCoinData();
     }
 
     public void IncreaseCoin()
     {
-        coinCount++;
+        sessionCoinCount++;
         GameObject.FindObjectOfType<CoinUI>().UpdateCoin();
+    }
+
+    public int GetSessionCoinCount()
+    {
+        return sessionCoinCount; 
     }
 
     private void OnApplicationQuit()
@@ -34,29 +37,37 @@ public class LevelManager : MonoBehaviour
 
     private void SaveCoinData()
     {
-        CoinData coinData = new CoinData(coinCount);
+        CoinData coinData = new CoinData(totalCoinCount);
         string json = JsonUtility.ToJson(coinData);
         File.WriteAllText(filePath, json);
     }
 
     private void LoadCoinData()
     {
-
-        // add coins when game end
-
-
-
         if (File.Exists(filePath))
         {
             string json = File.ReadAllText(filePath);
             CoinData coinData = JsonUtility.FromJson<CoinData>(json);
-            coinCount += coinData.totalCoins;  // Accumulate total coins
+            totalCoinCount = coinData.totalCoins; // Load the total coins
         }
         else
         {
-            coinCount = 0;
+            totalCoinCount = 0;
         }
     }
+
+    public void UpdateTotalCoinCount()
+    {
+        totalCoinCount += sessionCoinCount; 
+        sessionCoinCount = 0; 
+        SaveCoinData();
+    }
+
+    public void ChangeScene(string name){
+        SceneManager.LoadScene(name);
+    }
+}
+
 
     // public IEnumerator ChangeSceneAfterSound(string sceneName)
     // {
@@ -65,7 +76,7 @@ public class LevelManager : MonoBehaviour
     //     SceneManager.LoadScene(sceneName);
     // }
 
-}
+
 
 // public class LevelManager : MonoBehaviour
 // {

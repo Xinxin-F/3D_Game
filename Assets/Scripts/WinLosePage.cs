@@ -15,11 +15,13 @@ public class WinLosePage : MonoBehaviour
     public void ActivateLosePanel()
     {
         losePanel.SetActive(true);
+        LevelManager.manager.UpdateTotalCoinCount();
     }
 
 
     public void ActivateWinPanel()
     {
         winPanel.SetActive(true);
+        LevelManager.manager.UpdateTotalCoinCount();
     }
 }

@@ -12,7 +12,7 @@ public class CoinUI : MonoBehaviour
     }
 
     public void UpdateCoin(){
-        CoinText.text = $"Coin:{LevelManager.manager.coinCount}";
+        CoinText.text = $"Coins: {LevelManager.manager.GetSessionCoinCount()}";
     }
 
 }
