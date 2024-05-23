@@ -7,40 +7,33 @@ public class StickAttack : MonoBehaviour
 
     //[SerializeField] private GameObject assistant;
 
-     private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-
-        // GameObject instance = Instantiate(stickAttackParticle, transform.position, transform.rotation);
-        // ParticleSystem ps = instance.GetComponent<ParticleSystem>();
-        // ps.Play();
-         Debug.Log("OnCollisionEnter triggered with " + collision.gameObject.tag);
-        if(collision.gameObject.CompareTag("Ground")){
-            GameObject target = GameObject.FindWithTag("Boss");
-            if (target == null)
-            {
-                Debug.LogError("Boss not found!");
-                return;
-            }
-            ShootAtBoss(target.transform.position);
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            Debug.Log("OnCollisionEnter triggered with Ground");
+            Vector3 BossPosition = Vector3.zero;
+            RotateTowards(BossPosition);
+            ShootAtBoss(BossPosition);
         }
-        //Destroy(gameObject, 10f);
-        // if (collision.gameObject.CompareTag("Ground"))
-        // {
-        //     if (stickAttackParticle != null)
-        //     {
-        //         stickAttackParticle.Play();
-        //     //}
-        // }
+    }
+
+     private void RotateTowards(Vector3 targetPoint)
+    {
+        Vector3 direction = (targetPoint - transform.position).normalized;
+        direction.y = 0;
+        transform.rotation = Quaternion.LookRotation(direction);
     }
 
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletSpawnPoint;
-    [SerializeField] private float waterSpeed = 5f;
+    [SerializeField] private float waterSpeed = 10f;
 
-    private void ShootAtBoss(Vector3 targetPosition){
+    private void ShootAtBoss(Vector3 targetPosition)
+    {
         Debug.Log("ShootAtBoss called");
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        Vector3 direction = new Vector3(targetPosition.x, bulletSpawnPoint.position.y, targetPosition.z);
-        bullet.GetComponent<Rigidbody>().velocity = direction * waterSpeed;
+        Vector3 direction = targetPosition - bulletSpawnPoint.position;
+        bullet.GetComponent<Rigidbody>().velocity = direction.normalized * waterSpeed;
     }
 }

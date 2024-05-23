@@ -115,4 +115,3 @@ MonoBehaviour:
   timeToRespawn: 3
   objectToRespawn: {fileID: 7368215739172241317}
   maxCoin: 3
-  spawnedCoin: 1

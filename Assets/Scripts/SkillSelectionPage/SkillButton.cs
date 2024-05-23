@@ -24,11 +24,6 @@ public class SkillButton : MonoBehaviour {
     }
 
     void UpdateButtonUI() {
-        // Optionally, update the button's visual state to show selection
-        // ColorBlock colors = button.colors;
-        // colors.normalColor = isSelected ? Color.green : Color.white;
-        // button.colors = colors;
-
         ColorBlock colors = button.colors;
         colors.normalColor = isSelected ? Color.green : Color.white;
         colors.selectedColor = isSelected ? Color.green : Color.white;
