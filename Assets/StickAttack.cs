@@ -7,6 +7,12 @@ public class StickAttack : MonoBehaviour
     [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private float waterSpeed = 10f;
 
+    // private Rigidbody rb;
+
+    // void Start()
+    // {
+    //     rb = GetComponent<Rigidbody>();
+    // }
     
 
     private void OnCollisionEnter(Collision collision)
@@ -14,10 +20,20 @@ public class StickAttack : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             Debug.Log("OnCollisionEnter triggered with Ground");
+            GetComponent<Rigidbody>().isKinematic = true; //stationary when hits ground
             Vector3 BossPosition = Vector3.zero;
             RotateTowards(BossPosition);
             InvokeRepeating("ShootAtBoss", 0f, 3f);
-            Destroy(gameObject, 10f);
+            Destroy(gameObject, 15f);
+        }
+        // else if (collision.gameObject.CompareTag("Boss")||collision.gameObject.CompareTag("Obstacles")){
+        //     Destroy(gameObject);
+        // }
+    }
+
+    private void OnTriggerEnter(Collider other){
+        if(other.gameObject.CompareTag("Boss") ||other.gameObject.CompareTag("Obstacles")){
+            Destroy(gameObject);
         }
     }
 
