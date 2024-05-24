@@ -18,7 +18,7 @@ public class PlayerMovements : MonoBehaviour
 
     void Update()
     {
-        //rotateWithMouse();
+        RotateWithMouse();
         if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
@@ -43,6 +43,22 @@ public class PlayerMovements : MonoBehaviour
             currentIndicator = null;
         }
     }
+
+    private void RotateWithMouse()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, layerMask))
+        {
+            Vector3 direction = (hitInfo.point - transform.position).normalized;
+            direction.y = 0;
+            if (direction != Vector3.zero)
+            {
+                Quaternion lookRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+            }
+        }
+    }
+
 }
 //     private void RotateTowards(Vector3 targetPoint)
 //     {
@@ -54,20 +70,7 @@ public class PlayerMovements : MonoBehaviour
 // }
 
 
-    // public void rotateWithMouse(){
-    //     Vector3 mouseScreenPosition = Input.mousePosition;
-    //     Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Camera.main.transform.position.z));
-
-    //     Vector3 direction = mouseWorldPosition - transform.position;
-    //     // Ensure the direction is in the X-Z plane
-    //     direction.y = 0;
-
-    //     // Calculate the angle between the forward vector and the target direction
-    //     float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
-
-    //     // Apply the rotation to the player
-    //     transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
-    // }
+    
 
 //}
 // public class PlayerMovements : MonoBehaviour
