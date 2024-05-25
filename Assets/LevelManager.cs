@@ -56,6 +56,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+
     public void UpdateTotalCoinCount()
     {
         totalCoinCount += sessionCoinCount; 

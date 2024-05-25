@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
     public List<SpawnableObject> spawnPool;
     public GameObject spawnArea;
     public float buffer = 1.0f;
-    public int maxRetries = 100; // Maximum number of retries to avoid infinite loops
+    public int maxRetries = 100;
 
     void Start()
     {
