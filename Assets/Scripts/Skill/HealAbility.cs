@@ -22,7 +22,7 @@ public class HealAbility : Ability
         {
             ParticleSystem instance = Instantiate(healParticleSystem, parent.transform.position, Quaternion.identity);
             instance.Play();
-            Destroy(instance.gameObject, 6f); // Destroy after 6 seconds
+            Destroy(instance.gameObject, 5f); // Destroy after 6 seconds
         }
         else
         {
