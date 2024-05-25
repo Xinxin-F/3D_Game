@@ -4,15 +4,15 @@ using UnityEngine;
 public class RespawnManager : MonoBehaviour
 {   
     [SerializeField] private GameObject coinPrefab;
-    public int currentCoinNumber = 0;
+    public int currentCoinNumber = -1;
     private float waitTime = 15f;
     private Spawner spawner;
     [SerializeField] private int maxCoin = 3;
     private int spawnedCoin = 1;
    
     void Start(){
-    spawner = FindObjectOfType<Spawner>();  
-    StartCoroutine(CoinRespawnRoutine());
+        spawner = FindObjectOfType<Spawner>();  
+        StartCoroutine(CoinRespawnRoutine());
     }
 
     void Update(){

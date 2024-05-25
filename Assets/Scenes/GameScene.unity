@@ -364,6 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 7368215739172241317, guid: abcbfc4fdcdce483389bd037ca1d1337, type: 3}
   currentCoinNumber: 0
+  maxCoin: 3
 --- !u!4 &157201625
 Transform:
   m_ObjectHideFlags: 0
@@ -7707,11 +7708,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPool:
   - prefab: {fileID: 7092506384813081758, guid: 92a77982db12a4de98478a637740fe8e, type: 3}
-    spawnNumber: 13
+    spawnNumber: 16
   - prefab: {fileID: 7368215739172241317, guid: abcbfc4fdcdce483389bd037ca1d1337, type: 3}
     spawnNumber: 1
   - prefab: {fileID: 798711644213056387, guid: 1806337e7e2d14a7e894effd0a3d6305, type: 3}
-    spawnNumber: 7
+    spawnNumber: 6
   spawnArea: {fileID: 1034337391}
   buffer: 1
   maxRetries: 100
