@@ -1,34 +1,37 @@
-// using System.Collections;
-// using UnityEngine;
+using System.Collections;
+using UnityEngine;
 
-// public class RespawnManager : MonoBehaviour
-// {
-//     public static RespawnManager Instance { get; private set; }
+public class RespawnManager : MonoBehaviour
+{   
+    [SerializeField] private GameObject coinPrefab;
+    public int currentCoinNumber = 0;
+    private float waitTime = 15f;
+    private Spawner spawner;
+    [SerializeField] private int maxCoin = 3;
+    private int spawnedCoin = 1;
+   
+    void Start(){
+    spawner = FindObjectOfType<Spawner>();  
+    StartCoroutine(CoinRespawnRoutine());
+    }
 
-//     void Awake()
-//     {
-//         if (Instance == null)
-//         {
-//             Instance = this;
-//             DontDestroyOnLoad(gameObject);
-//         }
-//         else
-//         {
-//             Destroy(gameObject);
-//         }
-//     }
+    void Update(){
+        
+    }
 
-//     public void StartRespawnCoroutine(GameObject objectToRespawn, Spawner spawner, int timeToRespawn)
-//     {
-//         StartCoroutine(RespawnCoin(objectToRespawn, spawner, timeToRespawn));
-//     }
-
-//     private IEnumerator RespawnCoin(GameObject objectToRespawn, Spawner spawner, int timeToRespawn)
-//     {
-//         Debug.Log("Respawn Called");
-//         yield return new WaitForSeconds(timeToRespawn);
-//         spawner.SpawnObjects(objectToRespawn, 1);
-//         Debug.Log("Respawn Coin");
-//         Coin.spawnedCoin++;
-//     }
-// }
+    private IEnumerator CoinRespawnRoutine()
+    {
+        while (true) {
+        if(currentCoinNumber == 0 && spawnedCoin < maxCoin)
+        {   
+            yield return new WaitForSeconds(waitTime);
+            spawner.SpawnObjects(coinPrefab, 1);
+            spawnedCoin ++;
+        }
+        else
+        {
+            yield return null;
+        }
+        }
+    }
+}
