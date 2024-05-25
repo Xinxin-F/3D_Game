@@ -1,3 +1,53 @@
+using UnityEngine;
+
+public class AreaAttack : MonoBehaviour
+{
+    [SerializeField] public float attackRadius = 6f;
+    [SerializeField] private float areaDamage = 5f;
+    [SerializeField] private ParticleSystem attackParticleSystem;
+
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.A))
+    //     {
+    //         PerformAttack();
+    //     }
+    // }
+
+    public void PerformAttack()
+    {
+
+        if (attackParticleSystem != null)
+        {
+            //Debug.Log("Preparing to play particle system");
+            // Instantiate(attackParticleSystem, transform.position, transform.rotation);
+
+            ParticleSystem instance = Instantiate(attackParticleSystem, transform.position, transform.rotation);
+            instance.Play();
+            Destroy(instance.gameObject, instance.main.duration);
+
+        }
+        else
+        {
+            Debug.LogWarning("Particle system not assigned");
+        }
+
+
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
+        foreach (Collider hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("Boss"))
+            {
+                hitCollider.GetComponent<HealthController>().TakeDamage(areaDamage);
+            }
+        }
+    }
+}
+
+
+
+
+
 // using UnityEngine;
 
 // [CreateAssetMenu(menuName = "Abilities/Area Attack")]
@@ -33,88 +83,32 @@
 
 
 
-// with range indicator 
-using UnityEngine;
-
-public class AreaAttack : MonoBehaviour
-{
-    [SerializeField] public float attackRadius = 50f;
-    [SerializeField] private float areaDamage = 5f;
-    [SerializeField] private ParticleSystem attackParticleSystem;
-    [SerializeField] private GameObject rangeIndicatorCanvas; 
-
-    public void PerformAttack()
-    {
-        // Play particle system
-        if (attackParticleSystem != null)
-        {
-            ParticleSystem instance = Instantiate(attackParticleSystem, transform.position, transform.rotation);
-            instance.Play();
-            if (rangeIndicatorCanvas != null)
-            {
-                rangeIndicatorCanvas.SetActive(true);
-            }
-            Destroy(instance.gameObject, instance.main.duration);
-            DisableRangeIndicator();
-        }
-        else
-        {
-            Debug.LogWarning("Particle system not assigned");
-        }
-
-
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
-        foreach (Collider hitCollider in hitColliders)
-        {
-            if (hitCollider.CompareTag("Boss"))
-            {
-                hitCollider.GetComponent<HealthController>().TakeDamage(areaDamage);
-            }
-        }
-
-       
-    }
-
-    public void DisableRangeIndicator()
-    {
-        if (rangeIndicatorCanvas != null)
-        {
-            rangeIndicatorCanvas.SetActive(false);
-        }
-    }
-}
-
-
-
-
-
-//  ///// code solely for attack, no integration
+// // with range indicator 
 // using UnityEngine;
+// using UnityEngine.UI;
 
 // public class AreaAttack : MonoBehaviour
 // {
 //     [SerializeField] public float attackRadius = 50f;
 //     [SerializeField] private float areaDamage = 5f;
 //     [SerializeField] private ParticleSystem attackParticleSystem;
+//     [SerializeField] private GameObject rangeIndicatorPrefab; 
+//     [SerializeField] private Canvas canvas;
 
-//     // void Update()
-//     // {
-//     //     if (Input.GetKeyDown(KeyCode.A))
-//     //     {
-//     //         PerformAttack();
-//     //     }
-//     // }
 
 //     public void PerformAttack()
 //     {
-
+//         // Play particle system
 //         if (attackParticleSystem != null)
 //         {
-//             //Debug.Log("Preparing to play particle system");
-//             // Instantiate(attackParticleSystem, transform.position, transform.rotation);
-
 //             ParticleSystem instance = Instantiate(attackParticleSystem, transform.position, transform.rotation);
 //             instance.Play();
+//             if (rangeIndicatorPrefab != null)
+//             {
+//                GameObject rangeIndicator = Instantiate(rangeIndicatorPrefab, canvas.transform);
+//                 rangeIndicator.transform.position = transform.position;
+//                 Destroy(rangeIndicator, instance.main.duration);
+//             }
 //             Destroy(instance.gameObject, instance.main.duration);
 
 //         }
@@ -132,7 +126,20 @@ public class AreaAttack : MonoBehaviour
 //                 hitCollider.GetComponent<HealthController>().TakeDamage(areaDamage);
 //             }
 //         }
+
+       
 //     }
+
+    // public void DisableRangeIndicator()
+    // {
+    //     if (rangeIndicatorImage != null)
+    //     {
+    //         rangeIndicatorImage.enabled = false;
+    //     }
+    // }
 // }
+
+
+
 
 

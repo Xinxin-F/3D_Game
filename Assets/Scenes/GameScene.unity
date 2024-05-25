@@ -1395,7 +1395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace58f6eaaa1a4668a8c10f655195f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementIndicatorPrefab: {fileID: 6313661732895765668, guid: 7b0895b7bea2d418b8edd38e42e10824, type: 3}
+  movementIndicatorPrefab: {fileID: 647512850508049614, guid: 3234a6c665f764295bdf2af5f93f8f76, type: 3}
   layerMask:
     serializedVersion: 2
     m_Bits: 64

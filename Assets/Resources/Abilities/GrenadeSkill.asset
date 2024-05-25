@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GrenadeSkill
   m_EditorClassIdentifier: 
   name: GrenadeSkill
-  cooldownTime: 3
+  cooldownTime: 5
   activeTime: 0
   projectilePrefab: {fileID: 2693919402196112940, guid: 8e250eb0edae444778108c9745b38bcd, type: 3}
   launchVelocity: 10

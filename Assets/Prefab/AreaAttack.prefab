@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7592f53ccaa455bb6144e942c50bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRadius: 50
+  attackRadius: 10
   areaDamage: 5
   attackParticleSystem: {fileID: 198104970619360998, guid: b8e6ede2314654f6eb097388c8ae0005, type: 3}
-  rangeIndicatorCanvas: {fileID: 0}
+  rangeIndicatorPrefab: {fileID: 6423013404743058228, guid: 6e6d503a6051b486c8ba349c4017bf60, type: 3}
 --- !u!135 &2226952319550300281
 SphereCollider:
   m_ObjectHideFlags: 0

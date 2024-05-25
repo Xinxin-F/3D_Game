@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heal
   m_EditorClassIdentifier: 
   name: Heal
-  cooldownTime: 5
+  cooldownTime: 10
   activeTime: 0
   healAmount: 10
   healParticleSystem: {fileID: 1631696039330805756, guid: 1d987aa1c436043098e65687892acdfb, type: 3}

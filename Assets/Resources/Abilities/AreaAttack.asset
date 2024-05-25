@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AreaAttack
   m_EditorClassIdentifier: Assembly-CSharp::AreaAttackAbility
   name: AreaAttack
-  cooldownTime: 0
+  cooldownTime: 5
   activeTime: 0
   areaAttackObject: {fileID: 2226952319550300282, guid: 264c78c07cd47403186d544fc9649164, type: 3}
+  rangeIndicatorPrefab: {fileID: 4408991046143197496, guid: 0a7af06c5d4484a33a341ece3eeba712, type: 3}

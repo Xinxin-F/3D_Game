@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 028f549000a7a498c8fa5ede4e14cab2, type: 3}
-  m_Name: StickAttackSkill
+  m_Name: Mini Player
   m_EditorClassIdentifier: 
-  name: StickAttackSkill
-  cooldownTime: 2
+  name: Mini Player
+  cooldownTime: 10
   activeTime: 0
   projectilePrefab: {fileID: 2693919402196112940, guid: 0d220616bdd6c4cc4968a8d8ea99ba21, type: 3}
   launchVelocity: 10

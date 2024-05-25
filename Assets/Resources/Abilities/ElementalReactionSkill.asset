@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ElementalReactionSkill
   m_EditorClassIdentifier: 
   name: ElementalReactionSkill
-  cooldownTime: 0.5
+  cooldownTime: 1
   activeTime: 0
   fireballPrefab: {fileID: 2693919402196112940, guid: 03d2325c94229444fb53fa971c889678, type: 3}
   iceballPrefab: {fileID: 2693919402196112940, guid: 6ffef5003d5f34054adf80552fe0a34c, type: 3}
