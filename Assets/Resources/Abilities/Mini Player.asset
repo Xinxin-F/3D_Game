@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mini Player
   m_EditorClassIdentifier: 
   name: Mini Player
-  cooldownTime: 10
+  cooldownTime: 5
   activeTime: 0
   projectilePrefab: {fileID: 2693919402196112940, guid: 0d220616bdd6c4cc4968a8d8ea99ba21, type: 3}
   launchVelocity: 10

@@ -50,6 +50,10 @@ public class HealthController : MonoBehaviour
         OnHealthChanged.Invoke();
     }
 
+    public float getCurrentHealth(){
+        return currentHealth;
+    }
+
     // public void heal(){
     //     if(currentHealth <= FullHealth){
     //         float tempHealth = currentHealth + healAmount;

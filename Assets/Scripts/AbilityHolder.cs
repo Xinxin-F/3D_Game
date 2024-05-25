@@ -20,8 +20,8 @@ public class AbilityHolder : MonoBehaviour
         public AbilityState state = AbilityState.ready;
     }
 
-    public AbilityControl[] abilities;  // Array to hold any number of abilities
-    private AbilityControl currentAbility;  // Currently selected ability
+    public AbilityControl[] abilities; 
+    private AbilityControl currentAbility;
 
     void Start()
     {
