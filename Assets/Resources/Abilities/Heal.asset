@@ -16,3 +16,4 @@ MonoBehaviour:
   cooldownTime: 5
   activeTime: 0
   healAmount: 10
+  healParticleSystem: {fileID: 1631696039330805756, guid: 1d987aa1c436043098e65687892acdfb, type: 3}
