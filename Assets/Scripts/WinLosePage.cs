@@ -13,8 +13,9 @@ public class WinLosePage : MonoBehaviour
 
 
     public void ActivateLosePanel()
-    {
+    {   
         losePanel.SetActive(true);
+        Time.timeScale = 0f;
         LevelManager.manager.UpdateTotalCoinCount();
     }
 
@@ -22,6 +23,7 @@ public class WinLosePage : MonoBehaviour
     public void ActivateWinPanel()
     {
         winPanel.SetActive(true);
+        Time.timeScale = 0f;
         LevelManager.manager.UpdateTotalCoinCount();
     }
 }
