@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
-    private float timeRemaining = 90f;
+    private float timeRemaining = 120f;
     public bool timeIsRunning = true;
     public TMP_Text timeText;
 

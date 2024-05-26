@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165d08730114542bf83eb8c9e0edc9df, type: 3}
+  m_Name: RainAreaAttack
+  m_EditorClassIdentifier: 
+  name: RainAreaAttack
+  cooldownTime: 5
+  activeTime: 0
+  areaAttackObject: {fileID: 2226952319550300282, guid: ff531bc321f694107a4bd6848f40633b, type: 3}
+  rangeIndicatorPrefab: {fileID: 4408991046143197496, guid: 0a7af06c5d4484a33a341ece3eeba712, type: 3}
