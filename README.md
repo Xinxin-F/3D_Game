@@ -50,12 +50,12 @@ Interaction Method for level 1 to 4: Left mouse short click to release skills.
 ### Level 5
 - **Elemental Reaction**  
   - The Fire and Ice elemental bullets will alter the target's elemental state based on the amount of fire and ice bullets it receives.
-  - This skill does not directly cause health damage to the target but instead modifies its elemental properties.
+  - This skill does not directly cause health damage to the target but instead modifies its elemental properties.\
   **Interaction Method:**
     - Left Mouse Button Short press -- Release Fire Ball Bullet
     - Left Mouse Button Long Press -- Release Ice Ball Bullet
 
-  Elemental Reaction skill implemented in Training Ground Scene: 
+  **Elemental Reaction skill implemented in Training Ground Scene:**
 
 https://github.com/Xinxin-F/3D_Game/assets/127718380/c8902525-1662-441a-a70b-20def8360c4e
 
