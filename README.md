@@ -12,6 +12,11 @@ The player must utilise various skills and strategies to defeat the boss within 
   - Press and hold `Q` and to rotate camera clockwise around the map. 
   - Press and hold `E` for counterclockwise.
 
+## Installation
+- You may download `3D_Game.exe` file to have a go.
+- Target Platform: Windows
+
+
 ## Skills Implemented so far
 Level indicates the implementation difficulty of a skill. \
 Interaction Method for level 1 to 4: Left mouse short click to release skills. 
@@ -64,12 +69,12 @@ https://github.com/Xinxin-F/3D_Game/assets/127718380/c8902525-1662-441a-a70b-20d
 ## Screenshots of Game Scenes (archived in June 8, 2024)
 **Game Scene:**
 
-<img width="800" alt="Screenshot 2024-06-08 at 10 55 37" src="https://github.com/Xinxin-F/3D_Game/assets/127718380/5276851a-5aa6-4ead-933e-51ee7412d6a9">
+<img width="700" alt="Screenshot 2024-06-08 at 10 55 37" src="https://github.com/Xinxin-F/3D_Game/assets/127718380/5276851a-5aa6-4ead-933e-51ee7412d6a9">
 
 
 **Training Scene:**
 
-<img width="800" alt="Screenshot 2024-06-08 at 10 54 24" src="https://github.com/Xinxin-F/3D_Game/assets/127718380/2730eddc-f252-4ece-965e-9b91705424d4">
+<img width="700" alt="Screenshot 2024-06-08 at 10 54 24" src="https://github.com/Xinxin-F/3D_Game/assets/127718380/2730eddc-f252-4ece-965e-9b91705424d4">
 
 
 ## Development
