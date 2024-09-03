@@ -1,4 +1,4 @@
-# 3D Boss Fight Game
+# 3D Game
 
 ## Overview
 The player must utilise various skills and strategies to defeat the boss within two minutes. 
@@ -40,7 +40,7 @@ Interaction Method for level 1 to 4: Left mouse short click to release skills.
 - **Rain Attack**  
   Rain area attack around the target.
 
-- **Grenade**  
+- **Time-delayed Grenade**  
   - Throw a grenade in a parabolic trajectory.
   - Upon colliding with any object, the grenade will detonate after a 3-second delay.
   - This causes damage to targets within its attack range.
@@ -80,10 +80,10 @@ https://github.com/Xinxin-F/3D_Game/assets/127718380/c8902525-1662-441a-a70b-20d
 ## Development
 - **Technology:** Unity 3D, C#
 - **Unity Version**: 2021.3.23f1
-- **AI Tools:** ChatGPT, AI Tool (Game Dev Bot) developed by the Research Team of Dr. Hai-Ning Liang.
+- **AI Tools:** ChatGPT, AI Tool (Game Development Bot) developed by the Research Team.
 
 
 ## Acknowledgments
-Developed by Xinxin Fan for the Completion of CPT306 Principles of Computer Games Design Assignment 4 for 2023/2024 Term 2.
+Developed for the Completion of Gaming Course Assignment for 2023/2024 Term 2.
 
 
